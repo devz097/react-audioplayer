@@ -2,19 +2,7 @@
   <img alt="logo" src="./assets/logo.png" width="100" max-width="100%">
 </p>
 
-<h1 align="center">React Audio Player</h1>
-
-<div align="center">
-  <a href="https://www.npmjs.com/package/react-h5-audio-player" title="MIT License">
-    <img src="https://img.shields.io/npm/l/react-h5-audio-player.svg?color=brightgreen" alt="MIT License">
-  </a>
-  <a href="https://www.npmjs.com/package/react-h5-audio-player" title="Monthly download">
-    <img src="https://img.shields.io/npm/dm/react-h5-audio-player.svg?color=green" alt="Monthly download">
-  </a>
-  <a href="https://www.npmjs.com/package/react-h5-audio-player" title="Latest version">
-    <img src="https://img.shields.io/npm/v/react-h5-audio-player.svg" alt="Latest version">
-  </a>
-</div>
+<h1 align="center">Audio React Player</h1>
 
 * Audio player component that provides consistent UI/UX on different browsers.
 * Super customizable layout
@@ -25,39 +13,7 @@
 
 ![screenshot](./assets/screenshot.png)
 
-Live Demo: [Storybook](https://lhz516.github.io/react-h5-audio-player/)
-
-Try it on CodePen: [Basic](https://codepen.io/lhz516/pen/dyGpmgP), [Playlist](https://codepen.io/lhz516/pen/ZExvXjx)
-
 Supported browsers: Chrome, Firefox, Safari, Edge
-
-## [Migrate from v2.x to v3](https://github.com/lhz516/react-h5-audio-player/releases/tag/v3.0.0)
-
-## Installation
-
-`$ npm i react-h5-audio-player`
-
-Or
-
-`$ yarn add react-h5-audio-player`
-
-## Usage
-
-```jsx
-import AudioPlayer from 'react-h5-audio-player';
-import 'react-h5-audio-player/lib/styles.css';
-// import 'react-h5-audio-player/lib/styles.less' Use LESS
-// import 'react-h5-audio-player/src/styles.scss' Use SASS
-
-const Player = () => (
-  <AudioPlayer
-    autoPlay
-    src="http://example.com/audio.mp3"
-    onPlay={e => console.log("onPlay")}
-    // other props here
-  />
-);
-```
 
 #### Keyboard shortcuts (When audio player focused)
 
@@ -148,38 +104,6 @@ Note: `onTimeUpdate` is not supported. Please use `onListen` with `listenInterva
 
 Besides using props to change UI, React H5 Audio Player provides built-in class names and SASS/LESS variables for developers to overwrite.
 
-### SASS variables
-
-```scss
-$rhap_theme-color: #868686 !default;   // Color of all buttons and volume/progress indicators
-$rhap_background-color: #fff !default; // Color of the player background
-$rhap_bar-color: #e4e4e4 !default;     // Color of volume and progress bar
-$rhap_time-color: #333 !default;       // Font color of current time and duration
-$rhap_font-family: inherit !default;   // Font family of current time and duration
-```
-
-For LESS variables, just replace `$` with `@`. This library supports both.
-
-### Status class names
-
-There are some status class names on the audio player's wrapper div. They can be used for overwriting styles.
-
-| className                   | Description        | 
-| --------------------------- | ------------------ | 
-| rhap_loop--on               | Loop is on         | 
-| rhap_loop--off              | Loop is off        |
-| rhap_play-status--paused    | Paused status      |
-| rhap_play-status--playing   | Playing status     |
-
-For example:
-```scss
-.rhap_play-status--paused .rhap_progress-bar {
-  // Overwrite the progress bar style while the audio is paused
-}
-```
-
-## Advanced Usage
-
 ### Access to the audio element
 
 You can get direct access to the underlying audio element. First get a ref to ReactAudioPlayer:
@@ -198,16 +122,6 @@ Then you can access the audio element like this:
 
 You can use [Media Source Extensions](https://developer.mozilla.org/en-US/docs/Web/API/Media_Source_Extensions_API) and [Encrypted Media Extensions](https://developer.mozilla.org/en-US/docs/Web/API/Encrypted_Media_Extensions_API) with this player. You need to provide the complete duration, and also a onSeek and onEncrypted callbacks. The logic for feeding the audio buffer and providing the decryption keys (if using encryption) must be set in the consumer side. The player does not provide that logic. Check the [StoryBook example](https://github.com/lhz516/react-h5-audio-player/blob/master/stories/mse-eme-player.tsx) to understand better how to use.
 
-## Release Notes
-
-https://github.com/lhz516/react-h5-audio-player/releases
-
 ## How to contribute
 
 Issues and PR's are welcome.
-
-## Credits
-
-- Inspired by [React Audio Player](https://github.com/justinmc/react-audio-player).
-- Icon wrapper [iconify](https://iconify.design/)
-- Icons [Material Design Icons](https://github.com/Templarian/MaterialDesign)
